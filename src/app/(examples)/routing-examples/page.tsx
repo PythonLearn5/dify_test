@@ -31,6 +31,16 @@ const examples = [
     href: "/routing-examples/styled-image",
     description: "演示静态图片与自定义样式页面",
   },
+  {
+    title: "SSR Demo",
+    href: "/routing-examples/ssr",
+    description: "每次请求服务端重新渲染（force-dynamic）",
+  },
+  {
+    title: "SSG Demo",
+    href: "/routing-examples/ssg",
+    description: "构建时静态生成（force-static）",
+  },
 ];
 
 export default function RoutingExamplesPage() {
