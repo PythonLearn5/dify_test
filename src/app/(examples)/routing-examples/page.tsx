@@ -33,12 +33,12 @@ const examples = [
   },
   {
     title: "SSR Demo",
-    href: "/routing-examples/ssr",
+    href: "/ssr-demo",
     description: "每次请求服务端重新渲染（force-dynamic）",
   },
   {
     title: "SSG Demo",
-    href: "/routing-examples/ssg",
+    href: "/ssg-demo",
     description: "构建时静态生成（force-static）",
   },
 ];

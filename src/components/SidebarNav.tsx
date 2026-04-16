@@ -8,8 +8,8 @@ const navItems = [
   { href: "/", label: "Todo" },
   { href: "/users", label: "Users" },
   { href: "/routing-examples", label: "Routes Demo" },
-  { href: "/routing-examples/ssr", label: "SSR Demo" },
-  { href: "/routing-examples/ssg", label: "SSG Demo" },
+  { href: "/ssr-demo", label: "SSR Demo" },
+  { href: "/ssg-demo", label: "SSG Demo" },
 ];
 
 export function SidebarNav() {
