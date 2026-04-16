@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --app-surface: #ffffff;
+  --app-surface-elevated: #f8fafc;
+  --app-border: #e2e8f0;
+  --app-text: #0f172a;
+  --app-text-muted: #475569;
 }
 
 @theme inline {
@@ -12,15 +17,82 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme="dark"] {
+  --background: #020617;
+  --foreground: #f8fafc;
+  --app-surface: #0f172a;
+  --app-surface-elevated: #111827;
+  --app-border: #334155;
+  --app-text: #e2e8f0;
+  --app-text-muted: #94a3b8;
+}
+
+/* Make existing Tailwind gray utilities theme-aware without rewriting every page */
+[data-theme="dark"] .bg-white {
+  background-color: #0f172a !important;
+}
+
+[data-theme="dark"] .bg-gray-50 {
+  background-color: #111827 !important;
+}
+
+[data-theme="dark"] .bg-gray-100 {
+  background-color: #020617 !important;
+}
+
+[data-theme="dark"] .bg-gray-200 {
+  background-color: #1f2937 !important;
+}
+
+[data-theme="dark"] .text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .text-gray-700 {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .text-gray-800 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .border-gray-200 {
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .border-gray-300 {
+  border-color: #475569 !important;
+}
+
+[data-theme="dark"] .hover\:bg-gray-50:hover {
+  background-color: #1f2937 !important;
+}
+
+[data-theme="dark"] .hover\:bg-gray-100:hover {
+  background-color: #1f2937 !important;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.app-shell {
+  background: var(--background);
+  color: var(--app-text);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.app-sidebar {
+  border-right: 1px solid var(--app-border);
+  background: var(--app-surface);
+}
+
+.app-main {
+  color: var(--app-text);
 }

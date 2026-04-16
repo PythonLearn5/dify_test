@@ -26,6 +26,11 @@ const examples = [
     href: "/routing-examples/gallery",
     description: "从 gallery 打开 photo，会以拦截方式显示覆盖层",
   },
+  {
+    title: "Static Image + CSS Module",
+    href: "/routing-examples/styled-image",
+    description: "演示静态图片与自定义样式页面",
+  },
 ];
 
 export default function RoutingExamplesPage() {
