@@ -1,8 +1,15 @@
-import { createNextApiHandler } from '@orpc/next';
-import { appRouter } from '@/server';
+import { NextResponse } from "next/server";
 
-const handler = createNextApiHandler({
-  router: appRouter,
-});
+export async function GET() {
+  return NextResponse.json(
+    { message: "This endpoint is deprecated. Use /api/todos endpoints instead." },
+    { status: 410 }
+  );
+}
 
-export { handler as GET, handler as POST };
+export async function POST() {
+  return NextResponse.json(
+    { message: "This endpoint is deprecated. Use /api/todos endpoints instead." },
+    { status: 410 }
+  );
+}

@@ -1,7 +1,7 @@
-import { orpc } from 'orpc';
-import { todoRouter } from './routers/todo';
+import type { TodoRouter } from "./routers/todo";
 
-export const appRouter = orpc.router()
-  .merge('todo.', todoRouter);
+export type AppRouter = {
+  todo: TodoRouter;
+};
 
-export type AppRouter = typeof appRouter;
+export const appRouter = {} as AppRouter;
