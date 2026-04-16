@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 type User = {
@@ -53,6 +54,7 @@ export default function UsersPage() {
                   <th className="border-b px-4 py-2 text-left">Email</th>
                   <th className="border-b px-4 py-2 text-left">Role</th>
                   <th className="border-b px-4 py-2 text-left">Status</th>
+                  <th className="border-b px-4 py-2 text-left">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -63,6 +65,14 @@ export default function UsersPage() {
                     <td className="border-b px-4 py-2">{user.email}</td>
                     <td className="border-b px-4 py-2">{user.role}</td>
                     <td className="border-b px-4 py-2 capitalize">{user.status}</td>
+                    <td className="border-b px-4 py-2">
+                      <Link
+                        href={`/users/${user.id}`}
+                        className="text-blue-600 hover:text-blue-800 hover:underline"
+                      >
+                        查看
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>

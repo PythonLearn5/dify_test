@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { href: "/", label: "Todo" },
   { href: "/users", label: "Users" },
+  { href: "/routing-examples", label: "Routes Demo" },
 ];
 
 export function SidebarNav() {
@@ -20,7 +21,8 @@ export function SidebarNav() {
 
       <nav className="space-y-2">
         {navItems.map((item) => {
-          const isActive = pathname === item.href;
+          const isActive =
+            item.href === "/" ? pathname === item.href : pathname === item.href || pathname.startsWith(`${item.href}/`);
 
           return (
             <Link
